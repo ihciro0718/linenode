@@ -1,0 +1,10 @@
+{
+  "name": "LINENode",
+  "version": "0.0.0",
+  "description": "LINENode",
+  "main": "server.js",
+  "author": {
+    "name": "Louis.Wu",
+    "email": ""
+  }
+}

@@ -1,0 +1,14 @@
+{
+	"appenders": [
+		{
+			 "type": "console"
+		},
+		{
+			"type": "file",
+			"filename": "logs/line.log",
+			"maxLogSize": 20480000,
+			"backups": 30,
+			"category": "line"
+		}
+	]
+}
