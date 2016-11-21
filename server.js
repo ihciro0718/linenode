@@ -1,6 +1,7 @@
 ﻿// Application Log
 var log4js = require('log4js');
 var log4js_extend = require('log4js-extend');
+var bodyParser = require('body-parser');
 log4js_extend(log4js, {
     path: __dirname,
     format: '(@file:@line:@column)'
@@ -17,7 +18,10 @@ var port = process.env.port || 1337;
 var http = require('http');
 var server = http.Server(app).listen(port);
 var io = require('socket.io')(server);  // Socket.io 提供 SMI Snapin 連線，以便將訊息傳遞給 SMI
-app.use(express.bodyParser());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
 var hashtable = require('./hashtable');
 var rel_user_workitem = new hashtable.Hashtable;    // 紀錄 LINE ID 是否已建立對話
